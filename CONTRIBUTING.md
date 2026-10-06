@@ -5,8 +5,10 @@ requests are welcome. Keep the menu simple and preserve accessibility.
 
 ## Set up
 
-Use macOS with Xcode 16 or later, Swift 6+, and Python 3. Open `Package.swift` in
+Use macOS with Xcode 26 or later, Swift 6.2+, and Python 3. Open `Package.swift` in
 Xcode or use the terminal. There are no external package dependencies.
+The newer SDK supplies the concurrency annotations needed by ServiceManagement;
+this build requirement does not change the app’s macOS 13 deployment minimum.
 
 ```sh
 bash Scripts/test.sh
