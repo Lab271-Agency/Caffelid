@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Tests and release compilation
+    runs-on: macos-15
+    timeout-minutes: 20
+    steps:
+      - name: Check out source
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+      - name: Show toolchain
+        run: |
+          swift --version
+          python3 --version
+          uname -m
+      - name: Validate scripts and property lists
+        run: |
+          for script in Scripts/*.sh; do bash -n "$script"; done
+          plutil -lint Resources/Info.plist Resources/*.sleep-service.plist Resources/*.lproj/Localizable.strings
+      - name: Run isolated tests
+        run: bash Scripts/test.sh
+      - name: Compile optimized binaries without signing credentials
+        run: swift build -c release

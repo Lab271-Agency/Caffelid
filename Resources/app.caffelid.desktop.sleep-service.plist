@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>Label</key><string>app.caffelid.desktop.sleep-service</string>
+<key>BundleProgram</key><string>Contents/MacOS/CaffelidHelper</string>
+<key>ProgramArguments</key><array><string>CaffelidHelper</string></array>
+<key>RunAtLoad</key><true/>
+<key>KeepAlive</key><true/>
+<key>ProcessType</key><string>Background</string>
+<key>ExitTimeOut</key><integer>10</integer>
+<key>Sockets</key><dict><key>Control</key><dict>
+<key>SockPathName</key><string>/private/var/run/app.caffelid.desktop.sleep.sock</string>
+<key>SockPathMode</key><integer>438</integer>
+<key>SockType</key><string>stream</string>
+</dict></dict>
+</dict></plist>

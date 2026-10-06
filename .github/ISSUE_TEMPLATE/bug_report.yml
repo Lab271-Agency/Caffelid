@@ -1,0 +1,43 @@
+name: Bug report
+description: Report a reproducible problem with Caffelid.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Check docs/TROUBLESHOOTING.md first. For suspected security vulnerabilities,
+        follow SECURITY.md instead of posting exploit details here.
+  - type: input
+    id: app-version
+    attributes:
+      label: Caffelid version and build
+      description: The --check diagnostic prints the build number.
+      placeholder: 1.0.0 (19)
+    validations:
+      required: true
+  - type: input
+    id: mac
+    attributes:
+      label: Mac model and chip
+      placeholder: MacBook Pro 14-inch, M1 Pro
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: macOS version and build
+      description: Include the exact version and build from About This Mac.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps, expected result, and actual result
+      description: Include power source, lid position, external displays, and selected limits.
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Read-only diagnostic output (optional)
+      description: Run /Applications/Caffelid.app/Contents/MacOS/Caffelid --check and --sensors separately. Review before sharing; omit personal data and credentials.
+      render: text

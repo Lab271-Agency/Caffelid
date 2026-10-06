@@ -1,0 +1,22 @@
+.build/
+dist/
+.swiftpm/
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Local investigations and machine-specific settings.
+V1-RELEASE.md
+.env
+.env.*
+*.local
+*.xcuserstate
+
+# Signing credentials never belong in source control.
+*.p12
+*.pfx
+*.key
+*.pem
+*.p8
+*.mobileprovision
+*.provisionprofile

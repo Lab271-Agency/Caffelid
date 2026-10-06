@@ -1,0 +1,17 @@
+name: Feature request
+description: Suggest a focused improvement to Caffelid.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Describe the use case and how you handle it now.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Explain how this fits a small menu bar app. Include alternatives if helpful.
+    validations:
+      required: true
